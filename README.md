@@ -6,4 +6,3 @@ and further development and maintenance was taken over by [irods-contrib](https:
 * Expand readme
 ** write run instructions
 ** describe config options
-* Run the metalnx app at the root of the VHOST (not: https://server.example.org/metalnx)

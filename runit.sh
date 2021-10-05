@@ -12,17 +12,20 @@ else
 fi
 
 
-# Deploy war file by starting tomcat
 echo "Deploying war file..."
-catalina.sh start && sleep 15
+mkdir $CATALINA_HOME/webapps/metalnx && \
+  cd $CATALINA_HOME/webapps/metalnx && \
+  jar -xf $CATALINA_HOME/webapps/metalnx.war && \
+#  ls -l $CATALINA_HOME/webapps/metalnx && \
+  rm $CATALINA_HOME/webapps/metalnx.war && \
+  cd $CATALINA_HOME/
 
-# Overwrite default logging properties
 echo "Reconfiguring log level..."
 cp /tmp/log4j.properties /usr/local/tomcat/webapps/metalnx/WEB-INF/classes/log4j.properties
 
-# Restart tomcat
+# Start tomcat
 echo "Starting Metalnx"
-catalina.sh stop && sleep 5 && catalina.sh start
+catalina.sh start
 
 # End with a persistent foreground process
 tail -f /usr/local/tomcat/logs/catalina.out
