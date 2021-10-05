@@ -32,6 +32,7 @@ sed -ir "s|irods.admin.user=.*$|irods.admin.user=$IRODS_USER|" $env_file
 sed -ir "s|irods.admin.password=.*$|irods.admin.password=$IRODS_PASS|" $env_file
 sed -ir "s|jobs.irods.username=.*$|jobs.irods.username=$IRODS_USER|" $env_file
 sed -ir "s|jobs.irods.password=.*$|jobs.irods.password=$IRODS_PASS|" $env_file
+sed -ir "s|default.storage.resource=.*$|default.storage.resource=$IRODS_DEFAULT_RESC|" $env_file
 sed -ir "s|db.url=.*$|db.url=$METALNX_DB_URL|" $env_file
 sed -ir "s|db.username=.*$|db.username=$METALNX_DB_USER|" $env_file
 sed -ir "s|db.password=.*$|db.password=$METALNX_DB_PASS|" $env_file
